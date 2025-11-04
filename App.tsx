@@ -16,7 +16,7 @@ import { api } from "./convex/_generated/api";
 import { Id } from "./convex/_generated/dataModel";
 
 // ✅ Convex client
-const Convex = new ConvexReactClient(process.env.EXPO_PUBLIC_CONVEX_URL!);
+const convex = new ConvexReactClient("https://zany-elephant-41.convex.cloud");
 
 // ✅ Todo type
 type Todo = {
@@ -27,7 +27,7 @@ type Todo = {
 
 export default function App() {
   return (
-    <ConvexProvider client={Convex}>
+    <ConvexProvider client={convex}>
       <GestureHandlerRootView style={{ flex: 1 }}>
         <AppContent />
       </GestureHandlerRootView>
